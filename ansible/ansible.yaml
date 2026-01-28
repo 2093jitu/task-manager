@@ -1,4 +1,4 @@
-- hosts: k8s-node
+- hosts: k8snode
   tasks:
     - name: Apply deployment
       command: kubectl apply -f /home/control-plane-node/k8s-manifest/task-manager/deployment.yaml

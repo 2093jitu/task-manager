@@ -1,7 +1,9 @@
 - hosts: k8snode
   become: yes
+  become_method: sudo
   tasks:
-    - name: Delete deployment
+
+    - name: Delete deployment (ignore errors if not exists)
       command: kubectl delete -f /home/control-plane-node/k8s-manifest/task-manager/deployment.yaml
       environment:
         KUBECONFIG: /home/control-plane-node/.kube/config
@@ -16,4 +18,5 @@
       command: kubectl apply -f /home/control-plane-node/k8s-manifest/task-manager/service.yaml
       environment:
         KUBECONFIG: /home/control-plane-node/.kube/config
+
 

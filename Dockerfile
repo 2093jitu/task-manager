@@ -31,9 +31,9 @@ WORKDIR /home/taskuser/app
 # Copy JAR from build stage
 COPY --from=build /app/target/taskmanager-0.0.1-SNAPSHOT.jar ./taskmanager.jar
 
-ENV SPRING_DATASOURCE_URL=jdbc:mysql://samiulenterprise.com:3306/taskmanager?useSSL=false&serverTimezone=UTC
-ENV SPRING_DATASOURCE_USERNAME=soft
-ENV SPRING_DATASOURCE_PASSWORD=wKvYNzARQ
+ENV SPRING_DATASOURCE_URL=jdbc:mysql://192.168.0.156:3306/taskmanager?useSSL=false&serverTimezone=UTC
+ENV SPRING_DATASOURCE_USERNAME=taskuser
+ENV SPRING_DATASOURCE_PASSWORD=123456
 ENV SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
 
 # Expose port (match application.properties)

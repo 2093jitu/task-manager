@@ -1,0 +1,11 @@
+- hosts: k8s-node
+  tasks:
+    - name: Apply deployment
+      command: kubectl apply -f /home/ubuntu/deployment.yaml
+      environment:
+        KUBECONFIG: /home/ubuntu/.kube/config
+
+    - name: Apply service
+      command: kubectl apply -f /home/ubuntu/service.yaml
+      environment:
+        KUBECONFIG: /home/ubuntu/.kube/config

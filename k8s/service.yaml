@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: task-manager-backend-svc
-  labels:
-    app: task-manager-backend-svc
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: task-manager-backend
   ports:
     - port: 8080
       targetPort: 8080
+      nodePort: 32080
+
